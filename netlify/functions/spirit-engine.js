@@ -1,4 +1,5 @@
-fetch("https://www.aixx.ai/ajax/chat", {
+export default async (req: Request, context: Context) => {
+  const rsp = new fetch("https://www.aixx.ai/ajax/chat", {
   "headers": {
     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
     "x-requested-with": "XMLHttpRequest",
@@ -6,4 +7,11 @@ fetch("https://www.aixx.ai/ajax/chat", {
   },
   "body": "question=turbo+%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%3F&question_type=1&random_str=GshEGcMrdSw5DMZ&random_str2=Kw7xS3JZRkAK6Xj&bot_type=ChatGPT3.5Turbo&e=",
   "method": "POST"
-});
+}).then(rsp => json());
+  return {
+        statusCode: 200,
+        body: JSON.stringify(rsp)
+    }
+}
+
+
