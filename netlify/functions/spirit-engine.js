@@ -1,4 +1,4 @@
-export default async (req: Request, context: Context) => {
+export const handler = async (event) => {
   const rsp = new fetch("https://www.aixx.ai/ajax/chat", {
   "headers": {
     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
