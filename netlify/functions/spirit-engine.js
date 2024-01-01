@@ -1,7 +1,4 @@
 export const handler = async (event) => {
-    // Generates a random index based on the length of the jokes array
-    const randomIndex = Math.floor(Math.random() * jokes.length)
-    const randomJoke = jokes[randomIndex]
     const rsp = new fetch("https://www.aixx.ai/ajax/chat", {
   "headers": {
     "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
